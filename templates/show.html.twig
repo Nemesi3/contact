@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<div class="container">
+
+
+    <div class="d-flex justify-content-center" style="margin-top:10px">
+
+        {% for text in app.flashes('text') %}
+
+        {% for class  in app.flashes('class') %}
+
+            <div class="alert {{ class }}">
+                {{ text }}
+            </div>
+
+        {% endfor %}
+
+        {% endfor %}
+    </div>
+
+
+
+    <div class="row d-flex justify-content-center" style="margin:50px 0">
+
+        <div class="col-6" style="padding:25px; border:solid black 1px">
+
+            
+            {{ form(contact_form) }}
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+{% endblock %}
